@@ -8,7 +8,7 @@ import socket
 import subprocess
 
 voice_path = os.path.join(sys.path[0], 'voice')
-player = ["omxplayer", "mpg123", "mpg321", "mplayer"]
+player = "mpg123"
 
 
 def getLocalIP():
@@ -41,16 +41,13 @@ def getFilePath(filename):
 
 
 def play(voice):
-    for i in player:
-        cmd = "%s %s" % (i, getFilePath(voice))
-        a = subprocess.Popen(
-            cmd,
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE)
-        a.wait()
-        if a.returncode == 0:
-            break
+    cmd = "%s %s" % (player, getFilePath(voice))
+    a = subprocess.Popen(
+        cmd,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE)
+    a.wait()
 
 
 def speak(ip):
