@@ -26,3 +26,5 @@
 ```bash
 curl "https://raw.githubusercontent.com/lazydao/speak_raspi_ip/master/setup.sh" | bash
 ```
+
+**注意：**需要自行编辑`/etc/rc.local`将文中的`exit 0`移至文件末尾。
