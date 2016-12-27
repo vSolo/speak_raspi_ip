@@ -68,6 +68,6 @@ if __name__ == '__main__':
         else:
             count += 1
             speak(ip)
-        if count == 10:
+        if count == 2:
             break
         time.sleep(1)
